@@ -184,7 +184,7 @@ static NSUInteger alertControllerCount = 0;
 
 @property(nonatomic, strong) UIView *scrollWrapView;
 @property(nonatomic, strong) UIScrollView *headerScrollView;
-@property(nonatomic, strong) UIScrollView *buttonScrollView;
+@property(nonatomic, strong, readwrite) UIScrollView *buttonScrollView;
 
 @property(nonatomic, strong) CALayer *extendLayer;
 
@@ -1215,6 +1215,11 @@ static NSUInteger alertControllerCount = 0;
         _buttonScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     return _buttonScrollView;
+}
+
+- (void)setAlertButtonScrollViewBackgroundColor:(UIColor *)alertButtonScrollViewBackgroundColor {
+    _alertButtonScrollViewBackgroundColor = alertButtonScrollViewBackgroundColor;
+    self.buttonScrollView.backgroundColor = _alertButtonScrollViewBackgroundColor;
 }
 
 - (CALayer *)extendLayer {

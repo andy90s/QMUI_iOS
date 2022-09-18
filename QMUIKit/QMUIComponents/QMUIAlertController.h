@@ -95,7 +95,8 @@ typedef NS_ENUM(NSInteger, QMUIAlertControllerStyle) {
     UIScrollView    *_buttonScrollView; // 所有按钮的容器，特别的，actionSheet 下的取消按钮不放在这里面，因为它不参与滚动
     UIControl       *_maskView;         // 背后占满整个屏幕的半透明黑色遮罩
 }
-
+/// feat:修改_buttonScrollView 背景颜色为公开属性,主要为了自定义按钮大小的时候,设置父视图背景
+@property(nullable, nonatomic, strong) UIColor *alertButtonScrollViewBackgroundColor UI_APPEARANCE_SELECTOR;
 /// alert距离屏幕四边的间距，默认UIEdgeInsetsMake(0, 0, 0, 0)。alert的宽度最终是通过屏幕宽度减去水平的 alertContentMargin 和 alertContentMaximumWidth 决定的。
 @property(nonatomic, assign) UIEdgeInsets alertContentMargin UI_APPEARANCE_SELECTOR;
 
